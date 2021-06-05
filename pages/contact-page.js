@@ -1,21 +1,23 @@
-import { Layout } from "../components/Layout";
+import Layout from "../components/Layout";
 import Image from "next/image";
 
-const Contact = () => {
+export default function Contact() {
     return (
         <Layout title="Contact">
             <div className="bg-white text-center shadow-xl p-8 w-80 rounded">
-                <p className="font-bold">Content info</p>
+                <div className="mt-4">
+                    <p className="font-bold">Contant info</p>
+                </div>
                 <div className="flex justify-center mt-4">
-                    <Image className="rounded-full" src="/avatar.jpg" width={60} height={60} alt="Avatar"></Image>
+                    <Image className="rounded-full" src="/avatar.jpg" width={60} height={60} alt="Avatar" />
                 </div>
                 <div className="mt-4">
                     <p className="font-bold">Address</p>
                     <p className="text-xs mt-2 text-gray-600">city A</p>
                     <p className="font-bold mt-3">E-mail</p>
-                    <p className="text-xs mt-2 text-gray-600">sample@email.com</p>
+                    <p className="text-xs mt-2 text-gray-600">abc@gmail.com</p>
                     <p className="font-bold mt-3">Phone</p>
-                    <p className="text-xs mt-2 text-gray-600">123-456-789</p>
+                    <p className="text-xs mt-2 text-gray-600">000-123-456</p>
                 </div>
                 <div className="mt-6 flex justify-around">
                     <div>
@@ -43,6 +45,4 @@ const Contact = () => {
             </div>
         </Layout>
     );
-};
-
-export default Contact;
+}

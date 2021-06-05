@@ -1,9 +1,8 @@
-import { Layout } from "../components/Layout";
-
+import Layout from "../components/Layout";
 export default function Home() {
     return (
-        <Layout>
-            <p className="text-4xl">Hello, Next.js!</p>
+        <Layout title="Home">
+            <p className="text-4xl">Welcome to Nextjs</p>
         </Layout>
     );
 }

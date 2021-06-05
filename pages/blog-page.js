@@ -1,31 +1,17 @@
-import { Layout } from "../components/Layout";
-import { getAllPostData } from "../lib/post";
-import Link from "next/Link";
+import Layout from "../components/Layout";
+import Post from "../components/Post";
+import { getAllPostsData } from "../lib/posts";
 
-const Blog = ({ posts }) => {
+export default function Blog({ posts }) {
     return (
         <Layout title="Blog">
-            <ul className="m-10">
-                {posts.map((post) => {
-                    return (
-                        <div key={post.id}>
-                            <span>{post.id}</span>
-                            {" : "}
-                            <Link href={`/posts/${post.id}`}>
-                                <span className="cursor-pointer text-blue-500 border-blue-500 hover:bg-gray-200">{post.title}</span>
-                            </Link>
-                        </div>
-                    );
-                })}
-            </ul>
+            <ul className="m-10">{posts && posts.map((post) => <Post key={post.id} post={post} />)}</ul>
         </Layout>
     );
-};
-
-export default Blog;
+}
 
 export async function getStaticProps() {
-    const posts = await getAllPostData();
+    const posts = await getAllPostsData();
     return {
         props: { posts },
     };
